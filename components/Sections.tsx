@@ -8,12 +8,16 @@ export function Hero({
   subtitle,
   imageLabel = "Documented restoration response",
   imageSrc = "/images/water-extraction-technician.png",
+  secondaryCta = false,
 }: {
   title: string;
   subtitle: string;
   imageLabel?: string;
   imageSrc?: string;
+  secondaryCta?: boolean;
 }) {
+  const trustPoints = ["Emergency Water Damage Response", "Water Extraction", "Structural Drying", "Moisture Mapping", "Insurance-Friendly Documentation"];
+
   return (
     <section className="relative overflow-hidden bg-[#0f172a] text-white">
       <div className="absolute inset-0 opacity-25" aria-hidden="true">
@@ -30,11 +34,12 @@ export function Hero({
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/78 md:text-xl">{subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <CallButton />
+            {secondaryCta ? <Button href="/contact" variant="secondary">Request Service</Button> : null}
           </div>
-          <p className="mt-4 max-w-xl text-sm font-bold text-white/58">For active leaks, standing water, storm intrusion, or mold concerns, calling is the fastest way to start.</p>
-          <div className="mt-10 grid overflow-hidden border border-white/15 bg-white/[0.03] md:grid-cols-4">
-            {["Water Damage Restoration", "Mold Remediation", "Structural Drying", "Insurance-Friendly Documentation"].map((item) => (
-              <div key={item} className="flex min-h-20 items-center gap-3 border-b border-white/15 p-5 text-sm font-black text-white md:border-b-0 md:border-r last:md:border-r-0">
+          <p className="mt-4 max-w-xl text-sm font-bold text-white/58">For active leaks, standing water, burst pipes, or flood cleanup, calling is the fastest way to start.</p>
+          <div className="mt-10 grid overflow-hidden border border-white/15 bg-white/[0.03] sm:grid-cols-2 lg:grid-cols-5">
+            {trustPoints.map((item) => (
+              <div key={item} className="flex min-h-20 items-center gap-3 border-b border-white/15 p-5 text-sm font-black text-white lg:border-b-0 lg:border-r last:lg:border-r-0">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-[#d8c6a7]" aria-hidden="true" />
                 {item}
               </div>
@@ -47,8 +52,8 @@ export function Hero({
               <img src={imageSrc} alt={imageLabel} className="aspect-[4/3] min-h-[460px] w-full object-cover object-[65%_center]" />
               <div className="image-scrim absolute inset-0" />
               <div className="absolute inset-x-0 bottom-0 p-6">
-                <div className="mb-3 inline-flex bg-[#ca8a04] px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-white">Water Damage • Mold Remediation</div>
-                <p className="max-w-sm text-xl font-black leading-tight">Extraction, drying, cleanup, containment, and documentation for property owners who need clarity fast.</p>
+                <div className="mb-3 inline-flex bg-[#ca8a04] px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-white">Emergency Water Damage</div>
+                <p className="max-w-sm text-xl font-black leading-tight">Extraction, drying, moisture detection, flood cleanup, and documentation for property owners who need clarity fast.</p>
               </div>
             </div>
           </div>
@@ -199,8 +204,8 @@ export function ServiceCards() {
       <div className="container">
         <SectionHeader
           eyebrow="Restoration services"
-          title="When damage disrupts the property, these are the calls we handle."
-          text="From an active leak to a mold concern that needs answers, FIRM Restoration helps owners understand what is affected, what needs to happen next, and how to move the property toward a cleaner, drier, safer condition."
+          title="Emergency water damage services with mold support when moisture creates a second problem."
+          text="FIRM Restoration focuses first on water removal, structural drying, moisture mapping, flood cleanup, and property stabilization. Mold inspection and remediation remain important services when water damage was missed, left untreated, or not dried correctly."
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {waterServices.map(renderCard)}
@@ -218,11 +223,11 @@ export function WhoWeAreSection() {
         <div>
           <SectionHeader
             eyebrow="Who we are"
-            title="A local restoration company built for stressful property damage calls."
-            text="FIRM Restoration serves homeowners, landlords, property managers, realtors, investors, and business owners who need calm guidance when water damage or mold concerns interrupt a property."
+            title="A local water damage restoration company built for urgent property calls."
+            text="FIRM Restoration helps Central Florida homeowners and businesses respond to leaks, standing water, flooding, storm intrusion, and hidden moisture with calm communication and documented next steps."
           />
           <div className="grid gap-3 sm:grid-cols-2">
-            {["Locally focused", "Clear next steps", "Documented moisture conditions", "Residential and commercial"].map((item) => (
+            {["Emergency water response", "Clear next steps", "Documented moisture conditions", "Residential and commercial"].map((item) => (
               <div key={item} className="border hairline bg-[#f8fafc] p-4 text-sm font-black text-[#0f172a]">
                 {item}
               </div>
@@ -291,14 +296,14 @@ export function BeforeAfterSection() {
 
 export function ProcessSection() {
   const steps = [
-    ["01", "Call FIRM Restoration", "Reach a local restoration team and explain what happened, what rooms are affected, and whether water is still entering the property."],
-    ["02", "Stop Further Damage", "We help stabilize the situation with extraction, moisture checks, containment decisions, and practical next steps."],
-    ["03", "Restore Your Property", "Drying, cleanup, documentation, and restoration planning help move your home or business toward normal again."],
+    ["01", "Call for water damage help", "Reach a local restoration team and explain what happened, what rooms are affected, and whether water is still entering the property."],
+    ["02", "Extract and map moisture", "We help stabilize the situation with water extraction, moisture checks, drying decisions, and practical next steps."],
+    ["03", "Dry and document the property", "Structural drying, cleanup, monitoring, and documentation help move your home or business toward normal again."],
   ];
   return (
     <section className="bg-[#f8fafc] py-20">
       <div className="container">
-        <SectionHeader eyebrow="When water damage happens" title="A clear response when the property feels uncertain." />
+        <SectionHeader eyebrow="When water damage happens" title="A clear response for leaks, flooding, and hidden moisture." />
         <div className="grid gap-4 md:grid-cols-3">
           {steps.map(([number, title, text]) => (
             <div key={number} className="border hairline bg-white p-7">
@@ -315,7 +320,7 @@ export function ProcessSection() {
 
 export function WhyChoose() {
   const items = [
-    ["Fast response", Clock],
+    ["Emergency water response", Clock],
     ["Moisture mapping", Gauge],
     ["Professional drying equipment", WindIcon],
     ["Insurance-friendly documentation", FileCheck2],
@@ -326,7 +331,7 @@ export function WhyChoose() {
   return (
     <section className="py-20">
       <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <SectionHeader eyebrow="Why choose FIRM" title="Trust comes from what gets checked, documented, and explained." />
+        <SectionHeader eyebrow="Why choose FIRM" title="Water damage restoration depends on what gets checked, dried, and documented." />
         <div className="grid gap-3 sm:grid-cols-2">
           {items.map(([label, Icon]) => {
             const RealIcon = Icon as typeof Clock;
@@ -357,11 +362,11 @@ export function MoldPrevention() {
         <div>
           <SectionHeader
             eyebrow="Moisture control"
-            title="Prevent Mold Before It Starts"
-            text="When water damage isn't properly dried, mold can begin growing within days. FIRM Restoration uses moisture monitoring, structural drying, and professional restoration techniques to help protect your property from mold-related issues."
+            title="Mold prevention starts with proper drying."
+            text="Mold growth can begin when water damage is left untreated or building materials are not dried correctly. FIRM Restoration connects mold inspection and remediation to moisture control, structural drying, and restoration decisions."
             inverse
           />
-          <Button href="/contact">Schedule an Inspection</Button>
+          <Button href="/contact">Request Moisture Inspection</Button>
         </div>
       </div>
     </section>
@@ -372,7 +377,7 @@ export function ServiceAreaGrid() {
   return (
     <section className="border-b hairline bg-white py-20">
       <div className="container">
-        <SectionHeader eyebrow="Local service areas" title="Water damage and mold response for Clermont, Groveland, and nearby communities." text="The work is restoration first: extraction, drying, cleanup, inspection, and remediation. These are the Central Florida communities where FIRM Restoration brings that response." />
+        <SectionHeader eyebrow="Local service areas" title="Emergency water damage response for Clermont, Groveland, and nearby communities." text="FIRM Restoration provides water extraction, structural drying, flood cleanup, moisture detection, and mold-related support throughout these Central Florida service areas." />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {company.serviceAreas.map((area) => (
             <Link key={area} href="/service-areas" className="flex cursor-pointer items-center justify-between border hairline p-5 font-black text-[#0f172a] transition-colors duration-200 hover:border-[#ca8a04]">
@@ -422,8 +427,9 @@ export function ReviewSection() {
       <div className="container">
         <SectionHeader eyebrow="Reviews" title="Calm, clear help when water damage interrupts the day." />
         <div className="grid gap-4 md:grid-cols-3">
-          {reviews.map((review) => (
-            <figure key={review.name} className="border hairline p-7">
+          {reviews.map((review, index) => (
+            <figure key={`${review.name}-${index}`} className="border hairline p-7">
+              {/* Real verified customer reviews will be inserted here once available. */}
               <blockquote className="text-base leading-8 text-[#475569]">"{review.text}"</blockquote>
               <figcaption className="mt-6 font-black text-[#0f172a]">{review.name}</figcaption>
             </figure>

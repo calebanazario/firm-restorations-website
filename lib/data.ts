@@ -215,24 +215,43 @@ export const servicePages = [
 ] as const;
 
 export const homeFaqs = [
-  ["How quickly should water damage be addressed?", "Water damage should be addressed immediately. Fast extraction and drying can reduce material damage, odor, and mold-related risk."],
-  ["Will my insurance cover water damage?", "Coverage depends on your policy, the cause of loss, and timing. FIRM Restoration can provide documentation that may support your claim."],
-  ["How long does drying take?", "Drying commonly takes several days, depending on the amount of water, affected materials, humidity, and equipment needs."],
-  ["Can water damage cause mold?", "Yes. Wet materials can support mold growth within days when moisture is not controlled."],
-  ["Do I need mold remediation?", "You may need remediation if mold is present or moisture conditions have allowed growth. An inspection can help determine the right next step."],
+  [
+    "How quickly should water damage be addressed?",
+    "Water damage should be addressed as soon as it is discovered. Fast water extraction, moisture detection, and structural drying can reduce the chance of swollen materials, staining, odors, and mold-related problems. If water is still entering the property, calling immediately is the fastest way to begin stabilization.",
+  ],
+  [
+    "Will my insurance cover water damage restoration?",
+    "Coverage depends on your policy, the cause of the water damage, and how quickly the issue is addressed. Sudden events such as burst pipes or appliance leaks may be handled differently than long-term seepage. FIRM Restoration can provide photos, moisture readings, drying notes, and scope documentation that may support an insurance claim.",
+  ],
+  [
+    "What is structural drying?",
+    "Structural drying is the controlled process of drying affected building materials such as drywall, framing, subfloors, baseboards, cabinets, and flooring systems. It typically involves moisture mapping, air movement, dehumidification, monitoring, and documentation so equipment is placed where it is actually needed.",
+  ],
+  [
+    "Do I need flood cleanup if the standing water is already gone?",
+    "Yes, it may still be needed. Water can travel under flooring, behind baseboards, into wall cavities, and into adjacent rooms even after visible water is removed. Flood cleanup and moisture detection help determine what materials are affected and what drying or removal steps may be needed.",
+  ],
+  [
+    "Can water damage cause mold?",
+    "Yes. Mold can begin growing when wet materials are left untreated or are not dried properly. Florida humidity can make moisture control even more important. Proper extraction, structural drying, moisture monitoring, and follow-up inspection help reduce the risk of water damage turning into a mold concern.",
+  ],
+  [
+    "When do I need mold inspection or remediation?",
+    "Mold inspection or remediation may be needed when there is visible growth, musty odor, repeated moisture, or water damage that was not addressed quickly. FIRM Restoration treats mold remediation as a secondary service connected to moisture control, not as a replacement for proper water damage restoration.",
+  ],
 ];
 
 export const reviews = [
   {
-    name: "Homeowner in Clermont",
-    text: "FIRM Restoration explained the drying process clearly, documented the affected areas, and helped us understand what needed to happen next.",
+    name: "Customer review placeholder",
+    text: "Verified customer testimonial will be added here.",
   },
   {
-    name: "Property manager in Groveland",
-    text: "Responsive communication and practical recommendations made it easier to protect the unit and keep the owner informed.",
+    name: "Customer review placeholder",
+    text: "Customer review coming soon.",
   },
   {
-    name: "Local real estate professional",
-    text: "The team was thorough with moisture checks and helped our client make a calm decision during a stressful situation.",
+    name: "Customer review placeholder",
+    text: "Verified customer testimonial will be added here.",
   },
 ];
