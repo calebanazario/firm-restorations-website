@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0f172a;
+  --navy-2: #17243a;
+  --charcoal: #1c1917;
+  --steel: #475569;
+  --steel-2: #d8c6a7;
+  --accent: #ca8a04;
+  --accent-2: #b78a4f;
+  --mist: #f8fafc;
+  --warm: #f4efe6;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--charcoal);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  color: var(--white);
+  background: var(--accent);
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.hairline {
+  border-color: rgba(71, 85, 105, 0.22);
+}
+
+.emergency-strip {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(183, 138, 79, 0.2) 0,
+    rgba(183, 138, 79, 0.2) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+.hero-watermark {
+  background:
+    linear-gradient(90deg, #fbfaf7 0%, rgba(251, 250, 247, 0.72) 38%, rgba(251, 250, 247, 0.9) 100%),
+    radial-gradient(circle at 72% 35%, rgba(183, 138, 79, 0.18) 0 12%, transparent 13%),
+    linear-gradient(135deg, transparent 0 44%, rgba(6, 19, 31, 0.1) 44% 45%, transparent 45% 100%),
+    repeating-linear-gradient(90deg, rgba(6, 19, 31, 0.08) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(6, 19, 31, 0.06) 0 1px, transparent 1px 72px);
+}
+
+.hero-watermark::before {
+  content: "";
+  position: absolute;
+  right: 12%;
+  bottom: 0;
+  width: 260px;
+  height: 520px;
+  border-radius: 130px 130px 0 0;
+  background:
+    linear-gradient(180deg, rgba(6, 19, 31, 0.08), rgba(6, 19, 31, 0.02)),
+    linear-gradient(90deg, transparent 0 44%, rgba(183, 138, 79, 0.22) 44% 56%, transparent 56%);
+}
+
+.image-scrim {
+  background: linear-gradient(180deg, transparent 15%, rgba(15, 23, 42, 0.78) 100%);
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: min(100% - 24px, 1120px);
+  }
+}
