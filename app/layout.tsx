@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import { GoogleAdsInitializer } from "@/components/GoogleAdsInitializer";
 import { Header } from "@/components/Header";
 import { company } from "@/lib/data";
 
@@ -63,7 +65,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18217069726" strategy="beforeInteractive" />
+        <Script id="google-ads-gtag" strategy="beforeInteractive">
+          {`
+            if (!window.__firmGoogleAdsInitialized) {
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function gtag(){window.dataLayer.push(arguments);}
+              window.gtag('js', new Date());
+
+              window.gtag('config', 'AW-18217069726');
+              window.__firmGoogleAdsInitialized = true;
+            }
+          `}
+        </Script>
+      </head>
       <body>
+        <GoogleAdsInitializer />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <Header />
         {children}
