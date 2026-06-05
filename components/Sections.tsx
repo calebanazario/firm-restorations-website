@@ -16,7 +16,7 @@ export function Hero({
   imageSrc?: string;
   secondaryCta?: boolean;
 }) {
-  const trustPoints = ["Emergency Water Damage Response", "Water Extraction", "Structural Drying", "Moisture Mapping", "Insurance-Friendly Documentation"];
+  const trustPoints = ["Emergency Response", "Water Extraction", "Structural Drying", "Moisture Mapping", "Insurance Documentation"];
 
   return (
     <section className="relative overflow-hidden bg-[#0f172a] text-white">
@@ -37,10 +37,10 @@ export function Hero({
             {secondaryCta ? <Button href="/contact" variant="secondary">Request Service</Button> : null}
           </div>
           <p className="mt-4 max-w-xl text-sm font-bold text-white/58">For active leaks, standing water, burst pipes, or flood cleanup, calling is the fastest way to start.</p>
-          <div className="mt-10 grid overflow-hidden border border-white/15 bg-white/[0.03] sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-8 flex flex-wrap gap-2">
             {trustPoints.map((item) => (
-              <div key={item} className="flex min-h-20 items-center gap-3 border-b border-white/15 p-5 text-sm font-black text-white lg:border-b-0 lg:border-r last:lg:border-r-0">
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-[#d8c6a7]" aria-hidden="true" />
+              <div key={item} className="inline-flex min-h-11 items-center gap-2 border border-white/15 bg-white/[0.04] px-3 py-2 text-xs font-black uppercase tracking-[0.08em] text-white sm:px-4">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-[#d8c6a7]" aria-hidden="true" />
                 {item}
               </div>
             ))}
