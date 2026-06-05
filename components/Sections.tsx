@@ -97,6 +97,50 @@ export function ImageFeature({
   );
 }
 
+export function InteriorHero({
+  eyebrow,
+  title,
+  text,
+  highlights,
+  panelTitle = "Emergency response priorities",
+  ctaLabel = "Call Now",
+}: {
+  eyebrow: string;
+  title: string;
+  text: string;
+  highlights: string[];
+  panelTitle?: string;
+  ctaLabel?: string;
+}) {
+  return (
+    <section className="border-b hairline bg-[#f8fafc]">
+      <div className="container grid gap-8 py-14 lg:grid-cols-[1fr_0.72fr] lg:items-stretch">
+        <div className="flex flex-col justify-center">
+          <div className="mb-5 text-xs font-black uppercase tracking-[0.16em] text-[#a16207]">{eyebrow}</div>
+          <h1 className="max-w-4xl text-4xl font-black leading-tight tracking-tight text-[#0f172a] md:text-5xl">{title}</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#475569]">{text}</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <CallButton />
+            <Button href="/contact" variant="dark">{ctaLabel === "Call Now" ? "Request Service" : ctaLabel}</Button>
+          </div>
+        </div>
+        <aside className="border-l-4 border-[#ca8a04] bg-white p-6 shadow-sm">
+          <div className="text-xs font-black uppercase tracking-[0.14em] text-[#a16207]">FIRM Restoration</div>
+          <h2 className="mt-3 text-2xl font-black text-[#0f172a]">{panelTitle}</h2>
+          <div className="mt-6 grid gap-3">
+            {highlights.map((item) => (
+              <div key={item} className="flex items-start gap-3 border hairline bg-[#f8fafc] p-4 text-sm font-bold leading-6 text-[#0f172a]">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#ca8a04]" aria-hidden="true" />
+                {item}
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
+    </section>
+  );
+}
+
 export function RestorationVisual({ title, variant = "response" }: { title: string; variant?: "response" | "moisture" | "map" | "drying" }) {
   const rows =
     variant === "map"

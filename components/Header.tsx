@@ -3,7 +3,7 @@ import { Menu, PhoneCall, X } from "lucide-react";
 import { company } from "@/lib/data";
 
 const nav = [
-  ["Services", "/#services"],
+  ["Services", "/services"],
   ["Service Areas", "/service-areas"],
   ["About", "/about"],
   ["Contact", "/contact"],

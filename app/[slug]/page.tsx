@@ -58,7 +58,7 @@ export default async function ServicePage({ params }: Params) {
       <section className="py-20">
         <div className="container grid gap-10 lg:grid-cols-[1fr_0.8fr]">
           <div>
-            <SectionHeader eyebrow="Local SEO" title={`${service.title} for Clermont, Groveland, and Central Florida.`} text={service.local} />
+            <SectionHeader eyebrow="Local service" title={`${service.title} for Clermont, Groveland, and Central Florida.`} text={service.local} />
             <p className="max-w-3xl text-base leading-8 text-[#475569]">
               Whether the call comes from a homeowner, realtor, investor, landlord, business owner, or property manager, the priority is the same: respond quickly, reduce additional damage, document moisture conditions, and communicate clearly.
             </p>
